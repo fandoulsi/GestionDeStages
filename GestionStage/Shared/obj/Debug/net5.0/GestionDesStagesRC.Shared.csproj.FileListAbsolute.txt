@@ -1,0 +1,12 @@
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\bin\Debug\net5.0\GestionStage.Shared.deps.json
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\bin\Debug\net5.0\GestionStage.Shared.dll
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\bin\Debug\net5.0\ref\GestionStage.Shared.dll
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\bin\Debug\net5.0\GestionStage.Shared.pdb
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.csproj.AssemblyReference.cache
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.AssemblyInfoInputs.cache
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.AssemblyInfo.cs
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.dll
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\ref\GestionStage.Shared.dll
+C:\Users\ridy3\source\repos\GestionStage\GestionStage\Shared\obj\Debug\net5.0\GestionStage.Shared.pdb
