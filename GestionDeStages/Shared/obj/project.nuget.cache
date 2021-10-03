@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "/s5GeXDeswGh9MSmQz0JswecTwvTm1B3LlLX7OSfwNwF9yJWMu8UBTPH/vB0F5Up4+VfQDnCxoVXk18AlrSHhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\OneDrive\\Documents\\AUTOMNE2021\\ProjetDevApp\\GestionDesStages\\GestionDeStages\\Shared\\GestionDeStages.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.10\\microsoft.aspnetcore.authorization.5.0.10.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.10\\microsoft.aspnetcore.metadata.5.0.10.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

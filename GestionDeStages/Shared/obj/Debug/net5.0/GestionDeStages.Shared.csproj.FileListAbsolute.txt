@@ -1,0 +1,12 @@
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\bin\Debug\net5.0\GestionDeStages.Shared.deps.json
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\bin\Debug\net5.0\GestionDeStages.Shared.dll
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\bin\Debug\net5.0\ref\GestionDeStages.Shared.dll
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\bin\Debug\net5.0\GestionDeStages.Shared.pdb
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.AssemblyInfo.cs
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.dll
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\ref\GestionDeStages.Shared.dll
+C:\Users\User\OneDrive\Documents\AUTOMNE2021\ProjetDevApp\GestionDeStages\GestionDeStages\Shared\obj\Debug\net5.0\GestionDeStages.Shared.pdb
