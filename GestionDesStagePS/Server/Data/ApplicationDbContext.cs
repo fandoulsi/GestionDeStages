@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GestionStage.Server.Data
+namespace GestionDesStagePS.Server.Data
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
@@ -20,6 +20,11 @@ namespace GestionStage.Server.Data
         }
         public DbSet<StageStatut> StageStatut { get; set; }
         public DbSet<Stage> Stage { get; set; }
+
+        public DbSet<Etudiant> Etudiant { get; set; }
     
+        public DbSet<PostulerStage> PostulerStage { get; set; }
+
+        public DbSet<Entreprise> Entreprise { get; set; }
     }
 }

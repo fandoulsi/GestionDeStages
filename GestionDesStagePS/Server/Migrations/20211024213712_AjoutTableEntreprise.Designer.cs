@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDesStagePS.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211003194140_versionInitial")]
-    partial class versionInitial
+    [Migration("20211024213712_AjoutTableEntreprise")]
+    partial class AjoutTableEntreprise
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,6 +86,95 @@ namespace GestionDesStagePS.Server.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.Entreprise", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NomEntreprise")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NomResponsable")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PosteTelephonique")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("PrenomResponsable")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Telephone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Entreprise");
+                });
+
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.Etudiant", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Prenom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TelephoneCellulaire")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Etudiant");
+                });
+
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.PostulerStage", b =>
+                {
+                    b.Property<int>("PostulerStageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DatePostule")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Id")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("StageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PostulerStageId");
+
+                    b.HasIndex("Id");
+
+                    b.HasIndex("StageId");
+
+                    b.ToTable("PostulerStage");
+                });
+
             modelBuilder.Entity("GestionDesStagePS.Shared.Models.Stage", b =>
                 {
                     b.Property<Guid>("StageId")
@@ -119,6 +208,8 @@ namespace GestionDesStagePS.Server.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("StageId");
+
+                    b.HasIndex("Id");
 
                     b.HasIndex("StageStatutId");
 
@@ -380,13 +471,36 @@ namespace GestionDesStagePS.Server.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.PostulerStage", b =>
+                {
+                    b.HasOne("GestionDesStagePS.Shared.Models.Etudiant", "Etudiant")
+                        .WithMany()
+                        .HasForeignKey("Id");
+
+                    b.HasOne("GestionDesStagePS.Shared.Models.Stage", "Stage")
+                        .WithMany()
+                        .HasForeignKey("StageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Etudiant");
+
+                    b.Navigation("Stage");
+                });
+
             modelBuilder.Entity("GestionDesStagePS.Shared.Models.Stage", b =>
                 {
+                    b.HasOne("GestionDesStagePS.Shared.Models.Entreprise", "Entreprise")
+                        .WithMany()
+                        .HasForeignKey("Id");
+
                     b.HasOne("GestionDesStagePS.Shared.Models.StageStatut", "StageStatut")
                         .WithMany()
                         .HasForeignKey("StageStatutId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Entreprise");
 
                     b.Navigation("StageStatut");
                 });

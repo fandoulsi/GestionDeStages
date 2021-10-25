@@ -10,6 +10,9 @@ namespace GestionDesStagePS.Client.Interfaces
     {
         Task<Stage> AddStage(Stage stage);
         Task<IEnumerable<Stage>> GetAllStages();
-        
+
+        Task<Stage> GetStageByStageId(string stageId);
+
+        Task<PostulerStage> PostulerStage(PostulerStage postulerStage);
     }
 }

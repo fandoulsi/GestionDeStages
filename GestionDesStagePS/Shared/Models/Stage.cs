@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GestionDesStagePS.Shared.Models
 {
-  public  class Stage
+  public class Stage
     {
         [Key]
         public Guid StageId { get; set; }
@@ -17,7 +18,7 @@ namespace GestionDesStagePS.Shared.Models
         public string Titre { get; set; }
 
         [Required]
-        [StringLength(500, ErrorMessage = "Le description est trop longue.")]
+        [StringLength(500, ErrorMessage = "La description est trop longue.")]
         public string Description { get; set; }
 
         // Clé étrangère avec la table StageStatut
@@ -35,9 +36,9 @@ namespace GestionDesStagePS.Shared.Models
         [StringLength(450)]
         public string Id { get; set; }
 
+        [ForeignKey("Id")]
+        public Entreprise Entreprise { get; set; }
+
         public DateTime DateCreation { get; set; }
-
-       
-
     }
 }

@@ -33,20 +33,18 @@ namespace GestionStage.Client
             builder.Services.AddAuthorizationCore(authorizationOptions =>
             {
                 authorizationOptions.AddPolicy(
-                   @GestionStage.Shared.Policies.Policies.EstEtudiant,
-                    GestionStage.Shared.Policies.Policies.EstEtudiantPolicy());
+                   @GestionDesStagePS.Shared.Policies.Policies.EstEtudiant,
+                    GestionDesStagePS.Shared.Policies.Policies.EstEtudiantPolicy());
                 authorizationOptions.AddPolicy(
-                   @GestionStage.Shared.Policies.Policies.EstEntreprise,
-                    GestionStage.Shared.Policies.Policies.EstEntreprisePolicy()
+                   @GestionDesStagePS.Shared.Policies.Policies.EstEntreprise,
+                    GestionDesStagePS.Shared.Policies.Policies.EstEntreprisePolicy()
                     );
-
-
-
             });
 
             //TODO: Modifier les points de terminaisons pour la production
             builder.Services.AddHttpClient<IStageDataService, StageDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
             builder.Services.AddHttpClient<IStageStatutDataService, StageStatutDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
+            builder.Services.AddHttpClient<IEtudiantDataService, EtudiantDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
 
             await builder.Build().RunAsync();
         }

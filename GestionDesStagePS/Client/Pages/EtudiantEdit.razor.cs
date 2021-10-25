@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GestionDesStagePS.Client.Pages
 {
-    public partial class etudiant
+    public partial class EtudiantEdit
     {
     }
 }

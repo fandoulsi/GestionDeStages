@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionStage.Shared.Policies
+namespace GestionDesStagePS.Shared.Policies
 {
     public static class Policies
     {

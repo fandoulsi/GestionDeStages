@@ -17,7 +17,24 @@
         @foreach (var stage in Stages)
         {
             <tr>
-                <td>@stage.Titre</td>
+                <AuthorizeView>
+                    <Authorized>
+                        @if (context.User.IsInRole("Entreprise"))
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stageedit/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                        else
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stagedetail/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                    </Authorized>
+                </AuthorizeView>
+
+                
                 <td>@stage.Description</td>
                 <td>@stage.StageStatut?.Titre</td>
                 <td>@stage.DateCreation.ToString("yyyy-MM-dd")</td>

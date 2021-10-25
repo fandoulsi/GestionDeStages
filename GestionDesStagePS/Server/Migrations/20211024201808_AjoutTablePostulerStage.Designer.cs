@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionDesStagePS.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211003194140_versionInitial")]
-    partial class versionInitial
+    [Migration("20211024201808_AjoutTablePostulerStage")]
+    partial class AjoutTablePostulerStage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,57 @@ namespace GestionDesStagePS.Server.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.Etudiant", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Prenom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TelephoneCellulaire")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Etudiant");
+                });
+
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.PostulerStage", b =>
+                {
+                    b.Property<int>("PostulerStageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DatePostule")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Id")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("StageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PostulerStageId");
+
+                    b.HasIndex("Id");
+
+                    b.HasIndex("StageId");
+
+                    b.ToTable("PostulerStage");
                 });
 
             modelBuilder.Entity("GestionDesStagePS.Shared.Models.Stage", b =>
@@ -378,6 +429,23 @@ namespace GestionDesStagePS.Server.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("GestionDesStagePS.Shared.Models.PostulerStage", b =>
+                {
+                    b.HasOne("GestionDesStagePS.Shared.Models.Etudiant", "Etudiant")
+                        .WithMany()
+                        .HasForeignKey("Id");
+
+                    b.HasOne("GestionDesStagePS.Shared.Models.Stage", "Stage")
+                        .WithMany()
+                        .HasForeignKey("StageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Etudiant");
+
+                    b.Navigation("Stage");
                 });
 
             modelBuilder.Entity("GestionDesStagePS.Shared.Models.Stage", b =>

@@ -1,6 +1,6 @@
 ﻿using GestionDesStagePS.Server.Interface;
 using GestionDesStagePS.Shared.Models;
-using GestionStage.Server.Data;
+using GestionDesStagePS.Server.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

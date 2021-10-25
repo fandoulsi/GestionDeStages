@@ -2,7 +2,7 @@
 using GestionDesStagePS.Server.Interface;
 using GestionDesStagePS.Server.Models;
 using GestionDesStagePS.Server.Repositories;
-using GestionStage.Server.Data;
+using GestionDesStagePS.Server.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +38,7 @@ namespace GestionStage.Server
             //Ajouter les repos dans le container de services
             services.AddScoped<IStageRepository, StageRepository>();
             services.AddScoped<IStageStatutRepository, StageStatutRepository>();
+            services.AddScoped<IEtudiantRepository, EtudiantRepository>();
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options =>

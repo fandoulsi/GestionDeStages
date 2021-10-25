@@ -10,5 +10,9 @@ namespace GestionDesStagePS.Server.Interface
     {
         Stage AddStage(Stage stage);
         IEnumerable<Stage> GetAllStages();
+
+        Stage GetStageByStageId(string StageId);
+
+        PostulerStage PostulerStage(PostulerStage postulerStage);
     }
 }
