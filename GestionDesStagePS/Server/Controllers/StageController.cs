@@ -35,7 +35,6 @@ namespace GestionDesStagePS.Server.Controllers
 
             return Created("stage", created);
         }
-
         [HttpGet]
         public IActionResult GetAllStage()
         {
