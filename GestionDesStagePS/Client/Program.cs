@@ -37,8 +37,10 @@ namespace GestionStage.Client
                     GestionDesStagePS.Shared.Policies.Policies.EstEtudiantPolicy());
                 authorizationOptions.AddPolicy(
                    @GestionDesStagePS.Shared.Policies.Policies.EstEntreprise,
-                    GestionDesStagePS.Shared.Policies.Policies.EstEntreprisePolicy()
-                    );
+                    GestionDesStagePS.Shared.Policies.Policies.EstEntreprisePolicy());
+                authorizationOptions.AddPolicy(
+                   @GestionDesStagePS.Shared.Policies.Policies.EstCoordonnateur,
+                    GestionDesStagePS.Shared.Policies.Policies.EstCoordonnateurPolicy());
             });
 
             //TODO: Modifier les points de terminaisons pour la production
@@ -46,6 +48,7 @@ namespace GestionStage.Client
             builder.Services.AddHttpClient<IStageStatutDataService, StageStatutDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
             builder.Services.AddHttpClient<IEtudiantDataService, EtudiantDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
             builder.Services.AddHttpClient<IEntrepriseDataService, EntrepriseDataService>(client => client.BaseAddress = new Uri("https://localhost:44393/"));
+            builder.Services.AddHttpClient<ICoordonnateurDataService, CoordonnateurDataService>(client => client.BaseAddress = new Uri("https://localhost:44393"));
 
             await builder.Build().RunAsync();
         }

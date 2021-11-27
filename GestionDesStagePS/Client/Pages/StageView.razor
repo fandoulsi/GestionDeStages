@@ -1,5 +1,5 @@
 ﻿@page "/stageview"
-@attribute [Authorize(Roles = "Etudiant,Entreprise")]
+@attribute [Authorize(Roles = "Etudiant,Entreprise,Coordonnateur")]
 
 <h1>Tableau des offres de stage</h1>
 
@@ -19,7 +19,7 @@
             <tr>
                 <AuthorizeView>
                     <Authorized>
-                        @if (context.User.IsInRole("Entreprise"))
+                        @if (context.User.IsInRole("Entreprise") || context.User.IsInRole("Coordonnateur"))
                         {
                             <a style="font-style:italic;text-decoration:underline" href="@($"stageedit/{stage.StageId}")">
                                 @stage.Titre

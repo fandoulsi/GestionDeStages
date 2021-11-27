@@ -26,5 +26,7 @@ namespace GestionDesStagePS.Server.Data
         public DbSet<PostulerStage> PostulerStage { get; set; }
 
         public DbSet<Entreprise> Entreprise { get; set; }
+
+        public DbSet<Coordonnateur> Coordonnateur { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@page "/stageedit"
 @page "/stageedit/{StageId}"
-@attribute [Authorize(Policy = @GestionDesStagePS.Shared.Policies.Policies.EstEntreprise)]
+@attribute [Authorize(Roles = "Entreprise,Coordonnateur")]
 @using GestionDesStagePS.Shared.Models;
 
 <section>
@@ -26,7 +26,7 @@
             <InputSelect id="Statut" class="form-control col-sm-8" @bind-Value="@Stage.StageStatutId">
                 @foreach (var statut in StageStatut)
                 {
-<option value="@statut.StageStatutId">@statut.Titre</option>}
+                    <option value="@statut.StageStatutId">@statut.Titre</option>}
             </InputSelect>
         </div>
 
@@ -43,11 +43,11 @@
                 <br />
                 @foreach (var typetravail in (TypeTravail[])Enum.GetValues(typeof(TypeTravail)))
                 {
-<InputRadio Name="typetravailRadioGroup" Value="typetravail" />
-                        @:&nbsp;
-                        @typetravail
-                                                @:&nbsp;&nbsp;&nbsp;
-                                            }
+                    <InputRadio Name="typetravailRadioGroup" Value="typetravail" />
+                    @:&nbsp;
+                    @typetravail
+                    @:&nbsp;&nbsp;&nbsp;
+                }
             </InputRadioGroup>
         </div>
 

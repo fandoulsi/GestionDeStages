@@ -11,6 +11,7 @@ namespace GestionDesStagePS.Shared.Policies
     {
         public const string EstEntreprise = "EstEntreprise";
         public const string EstEtudiant = "EstEtudiant";
+        public const string EstCoordonnateur = "EstCoordonnateur";
         
         public static AuthorizationPolicy EstEtudiantPolicy()
         {
@@ -26,6 +27,14 @@ namespace GestionDesStagePS.Shared.Policies
                 .RequireAuthenticatedUser()
                 //.RequireClaim("Statut", "Milieu")
                 .RequireRole("Entreprise")
+                .Build();
+        }
+        public static AuthorizationPolicy EstCoordonnateurPolicy()
+        {
+            return new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                //.RequireClaim("Statut", "Milieu")
+                .RequireRole("Coordonnateur")
                 .Build();
         }
     }

@@ -35,6 +35,6 @@ namespace GestionDesStagePS.Shared.Models
 
         public DateTime DateCreation { get; set; }
 
-       public DateTime DateModification { get; set; }
+        public DateTime DateModification { get; set; }
     }
 }
