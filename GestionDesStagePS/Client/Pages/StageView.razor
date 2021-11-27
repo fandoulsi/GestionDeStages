@@ -1,0 +1,44 @@
+﻿@page "/stageview"
+@attribute [Authorize(Roles = "Etudiant,Entreprise")]
+
+<h1>Tableau des offres de stage</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
+            <th>Création</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stage in Stages)
+        {
+            <tr>
+                <AuthorizeView>
+                    <Authorized>
+                        @if (context.User.IsInRole("Entreprise"))
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stageedit/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                        else
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stagedetail/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                    </Authorized>
+                </AuthorizeView>
+
+                
+                <td>@stage.Description</td>
+                <td>@stage.StageStatut?.Titre</td>
+                <td>@stage.DateCreation.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
