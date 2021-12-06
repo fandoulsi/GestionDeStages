@@ -1,4 +1,4 @@
-using GestionDesStagePS.Server.Interface;
+ï»¿using GestionDesStagePS.Server.Interface;
 using GestionDesStagePS.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,12 +6,12 @@ namespace GestionDesStagePS.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CoordonateurController : Controller
+    public class EtudiantController : Controller
     {
 
         private readonly IEtudiantRepository _etudiantRepository;
 
-        public CoordonateurController(IEtudiantRepository etudiantRepository)
+        public EtudiantController(IEtudiantRepository etudiantRepository)
         {
             _etudiantRepository = etudiantRepository;
         }
@@ -23,10 +23,10 @@ namespace GestionDesStagePS.Server.Controllers
             var etudiantExiste = _etudiantRepository.GetEtudiantById(Id);
             if (etudiantExiste != null)
             {
-                // L'étudiant existe retourner l'entité trouvée
+                // L'ï¿½tudiant existe retourner l'entitï¿½ trouvï¿½e
                 return Ok(etudiantExiste);
             }
-            // L'étudiant n'existe pas retourner une instance Etudiant vide.
+            // L'ï¿½tudiant n'existe pas retourner une instance Etudiant vide.
             // car retourner null fait bugger la DeserializeAsync dans le dataservice : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token,
             return Ok(new Etudiant());
         }
@@ -54,7 +54,7 @@ namespace GestionDesStagePS.Server.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // S'assurer que le stage existe dans la table avant de faire la mise à jour
+            // S'assurer que le stage existe dans la table avant de faire la mise ï¿½ jour
             var etudiantToUpdate = _etudiantRepository.GetEtudiantById(etudiant.Id.ToString());
 
             if (etudiantToUpdate == null)

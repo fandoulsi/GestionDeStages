@@ -1,0 +1,12 @@
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.csproj.AssemblyReference.cache
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.AssemblyInfoInputs.cache
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.AssemblyInfo.cs
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\bin\Debug\net5.0\GestionDesStagePS.Shared.deps.json
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\bin\Debug\net5.0\GestionDesStagePS.Shared.dll
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\bin\Debug\net5.0\ref\GestionDesStagePS.Shared.dll
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\bin\Debug\net5.0\GestionDesStagePS.Shared.pdb
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.dll
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\ref\GestionDesStagePS.Shared.dll
+C:\Users\ridy3\source\repos\GestionDeStages\GestionDesStagePS\Shared\obj\Debug\net5.0\GestionDesStagePS.Shared.pdb

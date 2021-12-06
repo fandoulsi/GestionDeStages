@@ -19,8 +19,6 @@ namespace GestionDesStagePS.Client.Pages
         [Inject]
         public AuthenticationStateProvider GetAuthenticationStateAsync { get; set; }
 
-   
-
         [Inject]
         public IStageDataService StageDataService { get; set; }
 
@@ -30,6 +28,7 @@ namespace GestionDesStagePS.Client.Pages
         [Parameter]
         public string StageId { get; set; }
 
+
         public Stage Stage { get; set; } = new Stage();
 
         public string LibelleBoutonEnregistrer { get; set; }
@@ -38,17 +37,28 @@ namespace GestionDesStagePS.Client.Pages
 
 
         public List<StageStatut> StageStatut { get; set; } = new List<StageStatut>();
-
-        public List<PostulerStage> PostulerStage { get; set; } = new List<PostulerStage>();
-
         protected override async Task OnInitializedAsync()
         {
             // Appel du service pour obtenir la liste des status de stage
             StageStatut = (await StageStatutDataService.GetAllStageStatuts()).ToList();
-            // Proposer des valeurs par défaut pour un nouveau stage
-            Stage = new Stage { StageStatutId = 1, Salaire = true, DateCreation = DateTime.Now };
+
+            //Vérifier la présemce d'un paramètre, si absent result = null si présent et conversion un succès result = true
+            var result = Guid.TryParse(StageId, out var stageId);
+
+            if (!result)
+            {
+                // Proposer des valeurs par défaut pour un nouveau stage
+                Stage = new Stage { StageStatutId = 1, Salaire = true, DateCreation = DateTime.Now };
+                LibelleBoutonEnregistrer = "Ajouter ce nouveau stage";
+            }
+            else
+            {
+                Stage = (await StageDataService.GetStageByStageId(StageId));
+                //Obtenir les candidatures a ce stage
+                PostulerStage = (await StageDataService.GetCandidaturesStageByStageId(StageId)).ToList();
+                LibelleBoutonEnregistrer = "Mettre à jour les informations du stage";
+            }
         }
-        
 
 
         protected async Task HandleValidSubmit()

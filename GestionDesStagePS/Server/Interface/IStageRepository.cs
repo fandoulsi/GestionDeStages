@@ -15,10 +15,10 @@ namespace GestionDesStagePS.Server.Interface
 
         Stage GetStageByStageId(string StageId);
 
-      //  void DeleteStage(Guid StageId);
-
-       // Stage UpdateStage(Stage stage);
-
         PostulerStage PostulerStage(PostulerStage postulerStage);
+
+        IEnumerable<PostulerStage> GetCandidaturesStageByStageId(string StageId);
+
+        Stage UpdateStage(Stage stage);
     }
 }

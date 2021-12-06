@@ -95,6 +95,14 @@ namespace GestionDesStagePS.Server.Controllers
             // Le candidat semble avoir déjà postulé
             return BadRequest();
         }
+
+        [HttpGet("GetCandidaturesStageByStageId/{StageId}")]
+        //[HttpGet("{StageId}")]
+        public IActionResult GetCandidaturesStageByStageId(string StageId)
+        {
+            return Ok(_stageRepository.GetCandidaturesStageByStageId(StageId));
+        }
+
     }
 
 

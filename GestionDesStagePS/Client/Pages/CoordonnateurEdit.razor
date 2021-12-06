@@ -14,7 +14,7 @@
         <ValidationSummary></ValidationSummary>
 
         <div class="form-group row">
-            <label asp-for="NomEntreprise" class="col-sm-3">Nom de l'institution' :</label>
+            <label asp-for="NomEntreprise" class="col-sm-3">Nom de l'institution :</label>
             <InputText id="Prenom" class="form-control col-sm-8" @bind-Value="@Coordonnateur.NomInstitution" placeholder="Entrer le nom de l'institution"></InputText>
             <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.NomInstitution)" />
         </div>

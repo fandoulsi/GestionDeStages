@@ -14,9 +14,9 @@ namespace GestionDesStagePS.Client.Services
     public class CoordonnateurDataService : ICoordonnateurDataService
     {
         private readonly HttpClient _httpClient;
-        private readonly ILogger<EntrepriseDataService> _logger;
+        private readonly ILogger<CoordonnateurDataService> _logger;
 
-        public CoordonnateurDataService(HttpClient httpClient, ILogger<EntrepriseDataService> logger)
+        public CoordonnateurDataService(HttpClient httpClient, ILogger<CoordonnateurDataService> logger)
         {
             _httpClient = httpClient;
             this._logger = logger;
@@ -26,6 +26,14 @@ namespace GestionDesStagePS.Client.Services
         {
             try
             {
+                System.IO.StreamReader reader = new System.IO.StreamReader((await _httpClient.GetStreamAsync($"api/coordonnateur/{Id}")));
+                _logger.LogWarning(Id);
+                _logger.LogWarning(reader.ReadToEnd());
+
+                System.IO.StreamReader reader2 = new System.IO.StreamReader((await _httpClient.GetStreamAsync($"api/etudiant/{Id}")));
+                _logger.LogWarning(Id);
+                _logger.LogWarning(reader2.ReadToEnd());
+
                 return await JsonSerializer.DeserializeAsync<Coordonnateur>
                     (await _httpClient.GetStreamAsync($"api/coordonnateur/{Id}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             }
@@ -53,10 +61,10 @@ namespace GestionDesStagePS.Client.Services
 
         public async Task UpdateCoordonnateur(Coordonnateur coordonnateur)
         {
-            var stageJson =
+            var coordonnateurJson =
                 new StringContent(JsonSerializer.Serialize(coordonnateur), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync("api/coordonnateur", stageJson);
+            await _httpClient.PutAsync("api/coordonnateur", coordonnateurJson);
         }
     }
 }

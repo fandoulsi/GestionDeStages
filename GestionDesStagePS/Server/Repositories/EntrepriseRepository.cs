@@ -51,6 +51,7 @@ namespace GestionDesStagePS.Server.Repositories
             {
                 foundEntreprise.NomEntreprise = entreprise.NomEntreprise;
                 foundEntreprise.NomResponsable = entreprise.NomResponsable;
+                foundEntreprise.PrenomResponsable = entreprise.PrenomResponsable;
                 foundEntreprise.Telephone = entreprise.Telephone;
                 foundEntreprise.PosteTelephonique = entreprise.PosteTelephonique;
                 foundEntreprise.DateCreation = entreprise.DateCreation;

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ROGagB7I0zE6iXR1HeyUzCBvlMbu3zxPLGvg0hP6dERBxrJUjWnQ981hzeby+XT6MvF3OoSIkl+C/73D+mfGtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ridy3\\source\\repos\\GestionDeStages\\GestionDesStagePS\\Shared\\GestionDesStagePS.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.9\\microsoft.aspnetcore.authorization.5.0.9.nupkg.sha512",
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.9\\microsoft.aspnetcore.metadata.5.0.9.nupkg.sha512",
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\ridy3\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

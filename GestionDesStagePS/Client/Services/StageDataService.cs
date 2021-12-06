@@ -16,7 +16,7 @@ namespace GestionDesStagePS.Client.Services
         private readonly HttpClient _httpClient;
         private readonly ILogger<StageDataService> _logger;
 
-        public StageDataService(HttpClient httpClient, ILogger<StageDataService> logger) 
+        public StageDataService(HttpClient httpClient, ILogger<StageDataService> logger)
         {
             _httpClient = httpClient;
             _logger = logger;
@@ -93,6 +93,20 @@ namespace GestionDesStagePS.Client.Services
                 return await JsonSerializer.DeserializeAsync<PostulerStage>(await response.Content.ReadAsStreamAsync());
             }
 
+            return null;
+        }
+
+        public async Task<IEnumerable<PostulerStage>> GetCandidaturesStageByStageId(string StageId)
+        {
+            try
+            {
+                return await JsonSerializer.DeserializeAsync<IEnumerable<PostulerStage>>
+                    (await _httpClient.GetStreamAsync($"api/stage/GetCandidaturesStageByStageId/{StageId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Erreur dans l'obtention de données {ex}");
+            }
             return null;
         }
     }

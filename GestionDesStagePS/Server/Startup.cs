@@ -40,6 +40,7 @@ namespace GestionStage.Server
             services.AddScoped<IStageStatutRepository, StageStatutRepository>();
             services.AddScoped<IEtudiantRepository, EtudiantRepository>();
             services.AddScoped<IEntrepriseRepository, EntrepriseRepository>();
+            services.AddScoped<ICoordonnateurRepository, CoordonnateurRepository>();
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options =>
