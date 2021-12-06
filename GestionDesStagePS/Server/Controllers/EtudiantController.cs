@@ -6,12 +6,12 @@ namespace GestionDesStagePS.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EtudiantController : Controller
+    public class CoordonateurController : Controller
     {
 
         private readonly IEtudiantRepository _etudiantRepository;
 
-        public EtudiantController(IEtudiantRepository etudiantRepository)
+        public CoordonateurController(IEtudiantRepository etudiantRepository)
         {
             _etudiantRepository = etudiantRepository;
         }
