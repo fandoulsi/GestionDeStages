@@ -1,0 +1,50 @@
+﻿@page "/coordonnateuredit"
+@using GestionDesStagePS.Shared.Models;
+@attribute [Authorize(Policy = GestionDesStagePS.Shared.Policies.Policies.EstCoordonnateur)]
+@using Microsoft.AspNetCore.Authorization
+<section>
+    <AuthorizeView>
+        <Authorized>
+            <h3 style="background-color: black; color: white; padding: 5px 5px 5px 5px;" class="page-title">Détail des informations de votre profil | @context.User.Identity.Name</h3>
+        </Authorized>
+    </AuthorizeView>
+    <p class="text-muted" style="font-style:italic">Prenez note que votre courriel et votre mot de passe peuvent être modifiés en cliquant en haut à droite.</p>
+    <EditForm Model="@Coordonnateur" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary></ValidationSummary>
+
+        <div class="form-group row">
+            <label asp-for="NomEntreprise" class="col-sm-3">Nom de l'institution :</label>
+            <InputText id="Prenom" class="form-control col-sm-8" @bind-Value="@Coordonnateur.NomInstitution" placeholder="Entrer le nom de l'institution"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.NomInstitution)" />
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="NomResponsable" class="col-sm-3">Votre Nom :</label>
+            <InputText id="NomResponsable" class="form-control col-sm-8" @bind-Value="@Coordonnateur.Nom" placeholder="Entrer votre nom"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.Nom)" />
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="PrenomResponsable" class="col-sm-3">Votre Prénom :</label>
+            <InputText id="PrenomResponsable" class="form-control col-sm-8" @bind-Value="@Coordonnateur.Prenom" placeholder="Entrer votre prénom"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.Prenom)" />
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Telephone" class="col-sm-3">Votre téléphone cellulaire :</label>
+            <InputText id="Telephone" class="form-control col-sm-8" @bind-Value="@Coordonnateur.TelephoneCellulaire" placeholder="Entrer votre numéro de téléphone cellulaire"></InputText>
+            <label class="offset-sm-3 col-sm-8 text-muted">Merci de saisir avec le format suivant : 9999999999)</label>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.TelephoneCellulaire)" />
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="PrenomResponsable" class="col-sm-3">Remarques :</label>
+            <InputText id="PrenomResponsable" class="form-control col-sm-8" @bind-Value="@Coordonnateur.Remarques" placeholder="Entrer des remarques"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Coordonnateur.Remarques)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary edit-btn">Enregistrer les informations</button>
+        <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Annuler</a>
+    </EditForm>
+</section>

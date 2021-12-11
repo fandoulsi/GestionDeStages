@@ -1,0 +1,51 @@
+﻿@page "/stageview"
+@attribute [Authorize(Roles = "Etudiant,Entreprise,Coordonnateur")]
+
+<h1>Tableau des offres de stage</h1>
+<EditForm Model="@Rechercher">
+    <div class="form-group row">
+        <InputText id="Rechercher" class="form-control col-sm-8" @bind-Value="@Rechercher.ValeurRecherchee" placeholder="RECHERCHER ICI.  Entrer une partie du titre du stage ou un mot dans la description du stage"></InputText>
+        <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Rechercher.ValeurRecherchee)" />&nbsp;
+        <button type="submit" class="btn btn-primary" @onclick="@(() => SoumettreRecherche())">Rechercher</button>&nbsp;
+        <button type="submit" class="btn btn-primary" @onclick="@(() => AnnulerRecherche())">Annuler</button>&nbsp;
+    </div>
+</EditForm>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
+            <th>Création</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stage in Stages)
+        {
+            <tr>
+                <AuthorizeView>
+                    <Authorized>
+                        @if (context.User.IsInRole("Entreprise") || context.User.IsInRole("Coordonnateur"))
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stageedit/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                        else
+                        {
+                            <a style="font-style:italic;text-decoration:underline" href="@($"stagedetail/{stage.StageId}")">
+                                @stage.Titre
+                            </a>
+                        }
+                    </Authorized>
+                </AuthorizeView>
+
+                
+                <td>@stage.Description</td>
+                <td>@stage.StageStatut?.Titre</td>
+                <td>@stage.DateCreation.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
